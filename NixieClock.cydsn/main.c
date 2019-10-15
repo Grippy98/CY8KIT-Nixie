@@ -1,12 +1,9 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Andrei Aldea 2019
+ * IN-12 Nixie Clock Driver
+ * Cypress PsoC 5 CYKIT8-59
+ * Open Source Software
  * ========================================
 */
 #include "project.h"
@@ -15,13 +12,12 @@
 
 volatile uint16 ms_count = 0;
 
-uint8 timer_flag = 0;
 void delay (uint16 ms);
- 
+void update_disp(void);
+
 CY_ISR(MY_ISR) {
     ms_count++;
 }
-void update_disp(void);
 
 #define tube_off 10
 #define ind_off 3
@@ -59,7 +55,7 @@ uint8_t hour2;
 
 //DS3231 i2c addressは0X68
 #define sub_ad      0x68
-//variable//
+
 uint8   txbuf[]={0x00};     
 uint8   rxbuf[8];         
 
@@ -71,7 +67,7 @@ uint8 initbuf[]={0x00, // Register start address '16 -12-21 18:00:00
     0x02, // Day of the week 00 = sunday
     0x21, // day 21 = 21 days
     0x10, // month 12 = December
-    0x19, // year 16 = 16 yeasr
+    0x19, // year 16 = 16 year
            };
 
 void readRTC(void);
@@ -79,22 +75,22 @@ void writeUARTtime(void);
 
 int main(void)
 {
-    Timer_1_Start(); // Configure and enable timer
-    isr_1_StartEx(MY_ISR); // Point to MY_ISR to carry out the interrupt sub-routine
-    SPIM_1_Start();
-    UART_1_Start();
-    I2C_1_Start();
-    PWM_1_Start();
-    ADC_DelSig_1_Start();
-    PWM_1_WriteCompare(100);
+  Timer_1_Start(); // Configure and enable timer
+  isr_1_StartEx(MY_ISR); // Point to MY_ISR to carry out the interrupt sub-routine
+  SPIM_1_Start();
+  UART_1_Start();
+  I2C_1_Start();
+  PWM_1_Start();
+  ADC_DelSig_1_Start();
+  PWM_1_WriteCompare(100); //Initial brightness
     
-    /* Start the ADC conversion */
-    ADC_DelSig_1_StartConvert();
+  /* Start the ADC conversion */
+  ADC_DelSig_1_StartConvert();
     
     
-    CyGlobalIntEnable; /* Enable global interrupts. */
-     
-  tube1 = tube_off;
+  CyGlobalIntEnable; /* Enable global interrupts. */
+  
+  tube1 = tube_off; //Start Tubes Off
   tube2 = tube_off;
   tube3 = tube_off;
   tube4 = tube_off;
@@ -106,18 +102,20 @@ int main(void)
   update_disp();
   delay(1000);
 
-I2C_1_MasterWriteBuf(sub_ad,initbuf,8,I2C_1_MODE_COMPLETE_XFER ); //Set Current Time
+  I2C_1_MasterWriteBuf(sub_ad,initbuf,8,I2C_1_MODE_COMPLETE_XFER ); //Set Current Time
   while(0u == (I2C_1_MasterStatus() & I2C_1_MSTAT_WR_CMPLT));      //Wait for write to complete
 
-    for(;;)
-    {
+  for(;;)
+  {
     readRTC();
     writeUARTtime();
+    
+    //Read ADC
     if(ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS))
         {
             output = abs(ADC_DelSig_1_GetResult32());
             
-            /* Saturate ADC result to positive numbers. */
+            /* Saturate ADC result to positive numbers and limit brightness to acceptable values */
             if(output < 30)
             {
                 output = 30;
@@ -128,20 +126,20 @@ I2C_1_MasterWriteBuf(sub_ad,initbuf,8,I2C_1_MODE_COMPLETE_XFER ); //Set Current 
             }
         }
         
-  tube1 = (rxbuf[0] & 0x7f) % 10;
-  tube2 = (rxbuf[0] & 0x7f) / 10;
-  tube3 = (rxbuf[1] & 0x7f) % 10;
-  tube4 = (rxbuf[1] & 0x7f) / 10;
-  tube5 = (rxbuf[2] & 0x3f) % 10;
-  tube6 = (rxbuf[2] & 0x3f) / 10;
-  indicator1 = 1;
-  indicator2 = 1;
-  indicator3 = 1;
-  PWM_1_WriteCompare(output);
-  update_disp();
-  delay(20);
-   }
- }
+    tube1 = (rxbuf[0] & 0x7f) % 10; //Separate Digits from RX Buffer to Nixie
+    tube2 = (rxbuf[0] & 0x7f) / 10;
+    tube3 = (rxbuf[1] & 0x7f) % 10;
+    tube4 = (rxbuf[1] & 0x7f) / 10;
+    tube5 = (rxbuf[2] & 0x3f) % 10;
+    tube6 = (rxbuf[2] & 0x3f) / 10;
+    indicator1 = 1;
+    indicator2 = 1;
+    indicator3 = 1;
+    PWM_1_WriteCompare(output); //Write ADC Value to Brightness PWM Equivalent
+    update_disp(); //Update Display
+    delay(20); //Small Delay
+  }
+}
 
 void update_disp(void){
   data1 = 0x00000000;
@@ -199,7 +197,7 @@ void readRTC(void)
 
 void writeUARTtime(void)
 {
-    char result[50]; 
+    char result[50]; //String buffer 
     
     UART_1_PutString("\n");
     sprintf(result, "%u", rxbuf[6]); 
@@ -241,18 +239,8 @@ void delay (uint16 ms) {
     ms_count = 0;
 }
 
-char * toArray(int number)
-    {
-        int n = log10(number) + 1;
-        int i;
-      char *numberArray = calloc(n, sizeof(char));
-        for ( i = 0; i < n; ++i, number /= 10 )
-        {
-            numberArray[i] = number % 10;
-        }
-        return numberArray;
-    }
-    
+//--The Following are unused test  lines-- 
+
     /*
   // Fade Out
   for(uint8_t i = 150; i!=0; i-=1){
@@ -367,4 +355,3 @@ char * toArray(int number)
   update_disp();
   delay(500);
 */
-  // All On

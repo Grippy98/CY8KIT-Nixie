@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="NixieBench">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="NixieBench\NixieClock\Source Files\main.c">
 <ExpandedNodeIds>
 <v>NixieBench</v>
 <v>NixieBench\NixieClock</v>
@@ -33,9 +33,6 @@
 <v>NixieBench\NixieClock\Source Files</v>
 <v>NixieBench\NixieClock\Source Files\main.c</v>
 <v>NixieBench\NixieClock\Generated_Source\PSoC5</v>
-<v>NixieBench\CE195325_I2C_LCD_with_PSoC4.pdf</v>
-<v>NixieBench\CE195352_PSoC_5LP_Blinking_LED.pdf</v>
-<v>NixieBench\CE220818.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>NixieBench</v>
@@ -56,9 +53,6 @@
 <v>NixieBench\NixieClock\Source Files</v>
 <v>NixieBench\NixieClock\Source Files\main.c</v>
 <v>NixieBench\NixieClock\Generated_Source</v>
-<v>NixieBench\CE195325_I2C_LCD_with_PSoC4.pdf</v>
-<v>NixieBench\CE195352_PSoC_5LP_Blinking_LED.pdf</v>
-<v>NixieBench\CE220818.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -190,13 +184,6 @@
 <v>NixieBench\NixieClock\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_1.lst</v>
 <v>NixieBench\NixieClock\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_1_PM.lst</v>
 <v>NixieBench\NixieClock\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1.lst</v>
-<v>NixieBench\NixieClock\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_AsmGnu.lst</v>
-<v>NixieBench\NixieClock\CortexM3\ARM_GCC_541\Debug\NixieClock.elf</v>
-<v>NixieBench\NixieClock\CortexM3\ARM_GCC_541\Debug\NixieClock.hex</v>
-<v>NixieBench\NixieClock\CortexM3\ARM_GCC_541\Debug\NixieClock.map</v>
-<v>NixieBench\NixieClock\NixieClock.gpdsc</v>
-<v>NixieBench\NixieClock\NixieClock.rpt</v>
-<v>NixieBench\NixieClock\NixieClock_timing.html</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -211,6 +198,19 @@
 <v>NixieBench\NixieClock\PSoC 5LP Architecture TRM</v>
 <v>NixieBench\NixieClock\CY8C58LP Family Datasheet</v>
 <v>NixieBench\NixieClock\System Reference Guides</v>
+<v>NixieBench\NixieClock\System Reference Guides\cy_boot_v5_70</v>
+<v>NixieBench\NixieClock\ADC_DelSig_v3_30.pdf</v>
+<v>NixieBench\NixieClock\cy_clock_v2_20</v>
+<v>NixieBench\NixieClock\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>NixieBench\NixieClock\cy_isr_v1_70.pdf</v>
+<v>NixieBench\NixieClock\cy_pins_v2_20</v>
+<v>NixieBench\NixieClock\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>NixieBench\NixieClock\I2C_v3_50.pdf</v>
+<v>NixieBench\NixieClock\PWM_v3_30.pdf</v>
+<v>NixieBench\NixieClock\SPI_Master_v2_50.pdf</v>
+<v>NixieBench\NixieClock\SW_Tx_UART_v1_50.pdf</v>
+<v>NixieBench\NixieClock\Timer_v2_80.pdf</v>
+<v>NixieBench\NixieClock\ZeroTerminal.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>NixieBench</v>
@@ -218,6 +218,19 @@
 <v>NixieBench\NixieClock\PSoC 5LP Architecture TRM</v>
 <v>NixieBench\NixieClock\CY8C58LP Family Datasheet</v>
 <v>NixieBench\NixieClock\System Reference Guides</v>
+<v>NixieBench\NixieClock\System Reference Guides\cy_boot_v5_70</v>
+<v>NixieBench\NixieClock\ADC_DelSig_v3_30.pdf</v>
+<v>NixieBench\NixieClock\cy_clock_v2_20</v>
+<v>NixieBench\NixieClock\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>NixieBench\NixieClock\cy_isr_v1_70.pdf</v>
+<v>NixieBench\NixieClock\cy_pins_v2_20</v>
+<v>NixieBench\NixieClock\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>NixieBench\NixieClock\I2C_v3_50.pdf</v>
+<v>NixieBench\NixieClock\PWM_v3_30.pdf</v>
+<v>NixieBench\NixieClock\SPI_Master_v2_50.pdf</v>
+<v>NixieBench\NixieClock\SW_Tx_UART_v1_50.pdf</v>
+<v>NixieBench\NixieClock\Timer_v2_80.pdf</v>
+<v>NixieBench\NixieClock\ZeroTerminal.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -232,11 +245,9 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\NixieClock.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\NixieClock.cydsn\NixieClock.cydwr" />
+<name v=".\NixieClock.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\NixieClock.cydsn\main.c" />
-<name v=".\NixieClock.cydsn\Generated_Source\PSoC5\CyLib.c" />
-<name v=".\NixieClock.cydsn\Generated_Source\PSoC5\UART_1.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -244,7 +255,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1406, 986" SelectedTabbedMdiWindow="f40240bf-aa2d-413b-9ad6-15a923639ead"><DocumentWindow Key="C:\Users\andre\Documents\PSoC Creator\NixieBench\NixieClock.cydsn\TopDesign\TopDesign.cysch" Guid="f40240bf-aa2d-413b-9ad6-15a923639ead" /><DocumentWindow Key="C:\Users\andre\Documents\PSoC Creator\NixieBench\NixieClock.cydsn\NixieClock.cydwr" Guid="94619aaa-43f9-4b08-a5bb-df0635390cd1" /><DocumentWindow Key="C:\Users\andre\Documents\PSoC Creator\NixieBench\NixieClock.cydsn\main.c" Guid="d57f1f40-9875-4d71-ab23-549e56ea783e" /><DocumentWindow Key="C:\Users\andre\Documents\PSoC Creator\NixieBench\NixieClock.cydsn\Generated_Source\PSoC5\CyLib.c" Guid="e082a1e0-4677-4858-aed2-2b62f190e1a3" /><DocumentWindow Key="C:\Users\andre\Documents\PSoC Creator\NixieBench\NixieClock.cydsn\Generated_Source\PSoC5\UART_1.c" Guid="cbb14ee9-999d-435b-a81d-8b90ae13d6ba" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1233, 774" SelectedTabbedMdiWindow="23c7a79b-4470-4cab-880e-448af8aca876"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="8f7448e5-1bb8-4671-905c-1e1702381d96" /><DocumentWindow Key="C:\Users\andre\Desktop\CY8KIT-Nixie\NixieClock.cydsn\NixieClock.cydwr" Guid="686738f5-2efb-49f6-bf3e-a61d4d1c61f7" /><DocumentWindow Key="C:\Users\andre\Desktop\CY8KIT-Nixie\NixieClock.cydsn\TopDesign\TopDesign.cysch" Guid="6a665f8c-f51c-4480-8a9f-21ebcf15b224" /><DocumentWindow Key="C:\Users\andre\Desktop\CY8KIT-Nixie\NixieClock.cydsn\main.c" Guid="23c7a79b-4470-4cab-880e-448af8aca876" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
