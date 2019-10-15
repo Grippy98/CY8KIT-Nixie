@@ -4,7 +4,7 @@ This is my first ever project using a Cypress Microcontroller. It's the result o
 
 It's a clock driver for Old Soviet IN-12 Nxie Tubes.  
 
-###A video of it running can be found here:
+### A video of it running can be found here:
 https://www.youtube.com/watch?v=CJh9BvjUm9Y
 
 ### The device does the following:
@@ -15,3 +15,10 @@ https://www.youtube.com/watch?v=CJh9BvjUm9Y
 5. Outputs Time and Date over Serial UART at 115200 Baud (for debug and because why not)
 
 I also implemented my own delay function using a timer and interrupt because I thought it would be good practice. 
+
+## Top Level Design:
+[Top Level Design]: https://github.com/Grippy98/CY8KIT-Nixie/blob/master/images/Top_Design.PNG "Top Level Design"
+
+
+## Pin Mappings:
+[Pin Mappings]: https://github.com/Grippy98/CY8KIT-Nixie/blob/master/images/Pin_assignments.PNG "Pin Mappings"
