@@ -2,7 +2,7 @@
 
 This is my first ever project using a Cypress Microcontroller. It's the result of only about 4 hours of development from never having touched the device to getting the following demo. 
 
-It's a clock driver for Old Soviet IN-12 Nxie Tubes.  
+It's a clock driver for Old Soviet IN-12 Nixie Tubes.  
 
 ![alt text](https://github.com/Grippy98/CY8KIT-Nixie/blob/master/images/clock.jpg "The clock")
 
