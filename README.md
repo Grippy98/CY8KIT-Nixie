@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=CJh9BvjUm9Y
 ### The device does the following:
 1. Reads ADC Pin to Adjust Brigntness
 2. Writes 8-bit ADC Value as a PWM Duty Cycle to control Nixie Tube Brightness
-3. Talks over SPI to Daisy-chained Microchip HV5530 High Voltage Drievers used for the IN-12 Nixies (32 bit SIPO Shift Registers)
+3. Talks over SPI to Daisy-chained Microchip HV5530 High Voltage 32 bit SIPO Drivers used for the IN-12 Nixies
 4. Talks over i2C to a Maxim DS3231 Real Time Clock to get the time
 5. Outputs Time and Date over Serial UART at 115200 Baud (for debug and because why not)
 
